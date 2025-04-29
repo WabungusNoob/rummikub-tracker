@@ -1,167 +1,150 @@
-/* Body + Background */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 body {
+  font-family: 'Press Start 2P', cursive;
+  background: radial-gradient(circle at center, #ffecd2 0%, #fcb69f 100%);
   margin: 0;
-  padding: 0;
-  font-family: 'Georgia', serif;
-  background: radial-gradient(circle at top left, #f9c14d, #f16a22, #c62800);
-  color: #2c0b00;
-  min-height: 100vh;
+  padding: 20px;
+  color: #3e2723;
 }
 
-/* Title */
-h1 {
+.container {
+  max-width: 1200px;
+  margin: auto;
   text-align: center;
-  font-size: 3rem;
-  color: #fff;
-  text-shadow: 2px 2px #900000, -2px -2px #ffcc00;
-  margin-top: 1rem;
 }
 
-/* Player Area */
-#playerArea {
+#playersContainer {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
-  margin: 1rem auto;
-  padding: 1rem;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 25px;
 }
 
-/* Player Card */
-.player {
-  background: #f3e7ca;
-  border: 2px solid #c89b3c;
-  box-shadow: 0 4px #b57f24;
-  border-radius: 10px;
-  width: 100px;
-  height: 120px;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #000;
-  position: relative;
+.playerBox {
+  background: linear-gradient(145deg, #ff6f00, #e65100);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s;
+  position: relative;
+  min-width: 120px;
+  text-align: center;
+  font-size: 0.8em;
+  transition: transform 0.2s ease;
+  box-shadow: 0 4px 0 #bf360c;
+  border: 2px solid #bf360c;
 }
 
-.player:hover {
+.playerBox.selected {
+  background: #ff8f00;
+  box-shadow: 0 0 10px #ff6f00, 0 0 5px #ff3d00 inset;
   transform: scale(1.05);
 }
 
-.player.selected {
-  border-color: #d62300;
-  box-shadow: 0 4px #a01700;
-}
-
-/* Player Delete Button */
-.player .delete {
+.playerBox .deletePlayer {
   position: absolute;
-  top: 5px;
-  right: 8px;
-  color: #a00;
-  font-weight: bold;
-  font-size: 1.1rem;
-  cursor: pointer;
-}
-
-/* Add Player Button */
-#addPlayer {
-  background: #fff;
-  color: #d62300;
-  border: 2px dashed #d62300;
-  border-radius: 10px;
-  width: 100px;
-  height: 120px;
-  font-size: 2rem;
+  top: 4px;
+  right: 6px;
+  background: #ff3d00;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
   font-weight: bold;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: inset 0 0 10px rgba(214, 35, 0, 0.3);
+  padding: 0;
 }
 
-/* Input + Button Row */
-#inputRow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  margin: 1rem auto;
+#addPlayerBtn {
+  background-color: #d84315;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  font-size: 0.75em;
+  border-radius: 12px;
+  font-family: 'Press Start 2P', cursive;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #bf360c;
+  transition: 0.2s ease;
+}
+
+#addPlayerBtn:hover {
+  background-color: #e64a19;
+}
+
+#inputSection {
+  margin: 30px 0;
 }
 
 #wordInput {
-  font-size: 1.5rem;
-  padding: 0.5rem;
-  width: 200px;
-  border: 2px solid #c89b3c;
-  border-radius: 8px;
-  background: #fff8e1;
-  text-transform: uppercase;
+  padding: 10px;
+  width: 250px;
+  font-size: 1em;
+  border: 2px solid #ff7043;
+  border-radius: 10px;
+  text-align: center;
+  background: #fff8f1;
+  font-family: 'Press Start 2P', cursive;
+  color: #d84315;
 }
 
-/* Score Display */
-#scoreDisplay {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
-  text-shadow: 1px 1px #900;
-}
-
-/* Calculate Button */
-#calculateButton {
-  background: #d62300;
+#getScoreBtn {
+  padding: 10px 25px;
+  background-color: #ff5722;
   color: white;
   border: none;
-  padding: 0.7rem 1.2rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  border-radius: 8px;
-  box-shadow: 0 4px #a01700;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-#calculateButton:hover {
-  background: #e1370c;
-}
-
-/* Player Scores */
-#scoreLists {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-.player-score-box {
-  background: #fff3da;
-  border: 2px solid #c89b3c;
   border-radius: 10px;
-  padding: 1rem;
-  width: 200px;
-  box-shadow: 0 4px #b57f24;
+  font-size: 1em;
+  cursor: pointer;
+  margin-left: 10px;
+  font-family: 'Press Start 2P', cursive;
+  box-shadow: 0 4px 0 #d84315;
+  transition: 0.2s ease;
 }
 
-.player-score-box h2 {
-  margin-top: 0;
-  font-size: 1.4rem;
-  color: #b22200;
-  text-align: center;
-  text-shadow: 1px 1px #fff8e1;
+#getScoreBtn:hover {
+  background-color: #f4511e;
 }
 
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+#scoreDisplay {
+  margin-top: 15px;
+  font-size: 2em;
+  color: #d84315;
+  text-shadow: 1px 1px #ffccbc;
 }
 
-li {
-  padding: 0.4rem 0;
-  border-bottom: 1px solid #e0c88f;
-  font-weight: bold;
-  color: #333;
+#scoreBoards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.scoreBoard {
+  background-color: #ffe0b2;
+  border: 3px dashed #ff7043;
+  padding: 15px;
+  border-radius: 15px;
+  min-width: 250px;
+  box-shadow: 4px 4px 0 #e65100;
+}
+
+.scoreBoard h3 {
+  margin: 10px 0 15px;
+  color: #bf360c;
+  font-size: 1em;
+}
+
+.scoreItem {
+  background: #fff3e0;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.75em;
+  font-family: monospace;
+  border-left: 5px solid #ffa726;
 }
