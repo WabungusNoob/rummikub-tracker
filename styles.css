@@ -1,150 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 body {
-  font-family: 'Press Start 2P', cursive;
-  background: radial-gradient(circle at center, #ffecd2 0%, #fcb69f 100%);
+  background: linear-gradient(135deg, #fdbb2d, #f87000);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
   margin: 0;
-  padding: 20px;
-  color: #3e2723;
-}
-
-.container {
-  max-width: 1200px;
-  margin: auto;
-  text-align: center;
-}
-
-#playersContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-  margin-bottom: 25px;
-}
-
-.playerBox {
-  background: linear-gradient(145deg, #ff6f00, #e65100);
-  color: white;
-  padding: 15px 20px;
-  border-radius: 12px;
-  cursor: pointer;
-  position: relative;
-  min-width: 120px;
-  text-align: center;
-  font-size: 0.8em;
-  transition: transform 0.2s ease;
-  box-shadow: 0 4px 0 #bf360c;
-  border: 2px solid #bf360c;
-}
-
-.playerBox.selected {
-  background: #ff8f00;
-  box-shadow: 0 0 10px #ff6f00, 0 0 5px #ff3d00 inset;
-  transform: scale(1.05);
-}
-
-.playerBox .deletePlayer {
-  position: absolute;
-  top: 4px;
-  right: 6px;
-  background: #ff3d00;
-  border: none;
-  color: white;
-  border-radius: 50%;
-  width: 18px;
-  height: 18px;
-  font-size: 12px;
-  font-weight: bold;
-  cursor: pointer;
   padding: 0;
 }
 
-#addPlayerBtn {
-  background-color: #d84315;
-  color: white;
-  border: none;
-  padding: 15px 20px;
-  font-size: 0.75em;
-  border-radius: 12px;
-  font-family: 'Press Start 2P', cursive;
-  cursor: pointer;
-  box-shadow: 0 4px 0 #bf360c;
-  transition: 0.2s ease;
-}
-
-#addPlayerBtn:hover {
-  background-color: #e64a19;
-}
-
-#inputSection {
-  margin: 30px 0;
-}
-
-#wordInput {
-  padding: 10px;
-  width: 250px;
-  font-size: 1em;
-  border: 2px solid #ff7043;
-  border-radius: 10px;
+h1 {
+  font-family: 'Georgia', serif;
+  color: #fff;
+  text-shadow: 2px 2px 0 #c00, -2px -2px 0 #c00;
+  font-size: 3rem;
   text-align: center;
-  background: #fff8f1;
-  font-family: 'Press Start 2P', cursive;
-  color: #d84315;
+  margin: 1rem 0;
 }
 
-#getScoreBtn {
-  padding: 10px 25px;
-  background-color: #ff5722;
-  color: white;
-  border: none;
+.player-card {
+  display: inline-block;
+  background: #f3e7ca;
   border-radius: 10px;
-  font-size: 1em;
+  box-shadow: 0 4px 0 #aaa;
+  width: 80px;
+  height: 100px;
+  margin: 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  line-height: 100px;
+  color: #222;
   cursor: pointer;
-  margin-left: 10px;
-  font-family: 'Press Start 2P', cursive;
-  box-shadow: 0 4px 0 #d84315;
-  transition: 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
-#getScoreBtn:hover {
-  background-color: #f4511e;
+.player-card:hover {
+  transform: scale(1.05);
 }
 
-#scoreDisplay {
-  margin-top: 15px;
-  font-size: 2em;
-  color: #d84315;
-  text-shadow: 1px 1px #ffccbc;
-}
-
-#scoreBoards {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
-
-.scoreBoard {
-  background-color: #ffe0b2;
-  border: 3px dashed #ff7043;
-  padding: 15px;
-  border-radius: 15px;
-  min-width: 250px;
-  box-shadow: 4px 4px 0 #e65100;
-}
-
-.scoreBoard h3 {
-  margin: 10px 0 15px;
-  color: #bf360c;
-  font-size: 1em;
-}
-
-.scoreItem {
-  background: #fff3e0;
-  margin: 8px 0;
-  padding: 10px;
+.button {
+  background: #d62300;
+  color: #fff;
+  border: none;
   border-radius: 8px;
-  font-size: 0.75em;
-  font-family: monospace;
-  border-left: 5px solid #ffa726;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 4px 0 #a01700;
+  cursor: pointer;
+  transition: background 0.2s ease;
 }
+
+.button:hover {
+  background
